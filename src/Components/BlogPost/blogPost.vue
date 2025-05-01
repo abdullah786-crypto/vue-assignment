@@ -1,30 +1,39 @@
 <script setup>
 import Card from 'primevue/card';
+// defineProps
+import { defineProps } from 'vue';
 
+const props = defineProps(['imgUrl', 'title', 'subtitle'])
 
 </script>
 
 <template>
 
-    <!-- Here start -->
-    <Card style="width: 25rem; overflow: hidden">
+    <Card style="width: 100%; overflow: hidden">
         <template #header>
-            <img alt="user header" src="https://primefaces.org/cdn/primevue/images/usercard.png" />
+            <img alt="user header"
+                :src="imgUrl" />
         </template>
-        <template #title>Advanced Card</template>
-        <template #subtitle>Card subtitle</template>
-        <template #content>
-            <p class="m-0">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-                quas!
-            </p>
+        <template #title>
+            {{ title }}
+        </template>
+        <template :class="'text-justify'" #subtitle>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae, distinctio quasi? Debitis provident similique incidunt.
         </template>
         <template #footer>
-            <div class="flex gap-4 mt-1">
-                <Button label="Cancel" severity="secondary" outlined class="w-full" />
-                <Button label="Save" class="w-full" />
+            <div class="mt-2">
+                <Button @click="console.log('Button clicked successfully')"
+                    :class="'bg-black text-white w-full p-2 rounded-lg rounded-sm rounded-xl cursor-pointer'"> View
+                </Button>
             </div>
         </template>
     </Card>
-     <!-- Here end -->
 </template>
+
+<style scoped>
+::v-deep(.p-card-body) {
+  text-align: justify;
+  gap: 5px;
+  padding: 15px;
+}
+</style>

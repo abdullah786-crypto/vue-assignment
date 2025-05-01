@@ -6,7 +6,7 @@ import MainFile from './Components/mainFile.vue'
 
 <template>
 
-<MainFile />
+<router-view />
 
 </template>
 
