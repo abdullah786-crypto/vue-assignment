@@ -1,9 +1,8 @@
-// postcss.config.js
+// tailwind.config.js
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-  plugins: {
-    require('tailwindcss'),
-    require('autoprefixer'),
-  },
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
@@ -11,4 +10,5 @@ module.exports = {
       },
     },
   },
+  plugins: [],
 };

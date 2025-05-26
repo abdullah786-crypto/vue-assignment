@@ -11,7 +11,7 @@ export const routes = [
 
     {
         path: '/add-new-post',
-        name: 'addNewPost',
+        name: 'addNewPost',  
         component: AddNewPost,
     }
 ];
